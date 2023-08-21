@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Invitación a la Gran Reunión IPADE del Equipo 6">
+    <meta property="og:title" content="Gran Reunión IPADE">
+    <meta property="og:description" content="Invitación a la Gran Reunión IPADE del Equipo 6">
+    <meta property="og:image" content="./img/Escudo_IPADE.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+    <title>Gran Reunión IPADE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.5.3/css/bootstrap.min.css">
+   
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('./img/layout.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+    }
+
+    .countdown-container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 50px auto;
+      max-width: 500px;
+    }
+
+    .logo-img {
+      max-width: 300px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .countdown {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ff6347;
+    }
+
+    .location {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .invitation {
+      font-size: 20px;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .icon-container a {
+      color: #29a745;
+      margin: 0 5px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="countdown-container">
+          <img src="./img/Escudo_IPADE.png" alt="Logo IPADE" class="logo-img">
+          <div class="title">Gran Reunión IPADE</div>
+          <div class="countdown" id="countdown"></div>
+          <div class="location">
+            <i class="fas fa-map-marker-alt"></i> La Piedad, Michoacán<br>
+            <i class="far fa-calendar-alt"></i> Sábado 28 de Octubre a la 1:00 pm
+          </div>
+          <div class="invitation">
+            <p>¡Queridos amigos!</p>
+            <p>Es un honor invitarlos a la <strong>Gran Reunión IPADE del Equipo 6</strong>, en la cual tendré el placer de presentarles a mi novia.</p>
+            <p>Espero contar con su grata presencia y la de su pareja en este evento tan significativo. ¡No falten!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date('2023-10-28T13:00:00').getTime();
+      const now = new Date().getTime();
+      const timeRemaining = targetDate - now;
+
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      $('#countdown').html(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+    }
+
+    $(document).ready(function() {
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
